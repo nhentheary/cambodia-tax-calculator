@@ -1,0 +1,460 @@
+/* ── CALCULATOR ── */
+.calc-section {
+  background: linear-gradient(160deg, var(--navy) 0%, #1a3f7a 50%, #2255a4 100%);
+  padding: 80px 80px;
+}
+.calc-label { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--sky-mid); margin-bottom: 10px; }
+.calc-h2 { font-size: 34px; font-weight: 900; color: var(--white); margin-bottom: 8px; letter-spacing: -.02em; }
+.calc-sub { font-size: 14px; color: rgba(255,255,255,0.45); margin-bottom: 32px; }
+.tax-pills {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  margin-bottom: 32px;
+}
+.tax-pills::-webkit-scrollbar {
+  height: 7px;
+}
+.tax-pills::-webkit-scrollbar-thumb {
+  background: rgba(37,99,235,0.24);
+  border-radius: 999px;
+}
+.tax-pill {
+  flex: 1 1 140px;
+  min-width: 140px;
+  padding: 12px 18px;
+  border-radius: 12px;
+  border: 1px solid rgba(37,99,235,0.35);
+  background: #ffffff;
+  color: var(--blue);
+  font-size: 13px;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+  transition: all .22s ease;
+  white-space: nowrap;
+}
+.tax-pill:hover {
+  background: rgba(37,99,235,0.08);
+}
+.tax-pill.active {
+  background: #2563EB;
+  color: #ffffff;
+  border-color: transparent;
+  box-shadow: 0 14px 30px rgba(37,99,235,0.18);
+}
+.calc-body-grid { display: grid; grid-template-columns: 1fr 1.25fr; gap: 24px; align-items: start; }
+.tax-description {
+  position: relative;
+}
+.tax-desc-card {
+  display: flex;
+  flex-direction: column;
+  height: clamp(360px, calc(100vh - 220px), 560px);
+  max-height: 560px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 26px;
+  scroll-behavior: smooth;
+  scrollbar-gutter: stable;
+  background: #f6fbff;
+  border: 1px solid rgba(37,99,235,0.14);
+  border-radius: 18px;
+  box-shadow: 0 20px 40px rgba(15,57,102,0.06);
+}
+.tax-desc-card::-webkit-scrollbar {
+  width: 8px;
+}
+.tax-desc-card::-webkit-scrollbar-track {
+  background: rgba(37,99,235,0.06);
+  border-radius: 999px;
+}
+.tax-desc-card::-webkit-scrollbar-thumb {
+  background: rgba(37,99,235,0.28);
+  border-radius: 999px;
+}
+.tax-desc-header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: #f6fbff;
+  padding-bottom: 14px;
+  margin-bottom: 16px;
+}
+.tax-desc-title {
+  margin-top: 8px;
+  font-size: 24px;
+  line-height: 1.12;
+  color: var(--blue);
+}
+.tax-desc-body {
+  color: var(--ink2);
+  line-height: 1.85;
+  margin-bottom: 18px;
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+.tax-desc-section {
+  margin-bottom: 20px;
+  min-width: 0;
+}
+.tax-desc-section h4 {
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--blue);
+  margin-bottom: 10px;
+  letter-spacing: .03em;
+  text-transform: uppercase;
+}
+.tax-desc-section p {
+  margin: 0;
+  color: var(--ink2);
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+.tax-desc-section pre {
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  overflow-x: hidden;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.7;
+  padding: 16px;
+  background: rgba(37,99,235,0.06);
+  border-radius: 12px;
+  color: var(--blue-dark);
+}
+.calc-card {
+  background: #ffffff;
+  border: 1px solid rgba(37,99,235,0.16);
+  border-radius: 18px;
+  padding: 28px;
+  box-shadow: 0 24px 52px rgba(15,57,102,0.08);
+}
+.calc-panel-head {
+  margin-bottom: 20px;
+}
+.cp-info-box {
+  margin: 22px 0;
+  padding: 18px 20px;
+  border-radius: 14px;
+  background: #eef6ff;
+  border: 1px solid rgba(37,99,235,0.16);
+  color: var(--ink2);
+  line-height: 1.75;
+  font-size: 13px;
+}
+.cp-actions {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 14px;
+}
+.cp-go, .cp-reset {
+  border-radius: 12px;
+}
+.cp-result {
+  margin-top: 22px;
+  border-radius: 16px;
+  padding: 22px;
+  background: #f3f9ff;
+  border: 1px solid rgba(37,99,235,0.14);
+}
+.cr-row {
+  display: grid;
+  grid-template-columns: minmax(140px, 1fr) minmax(120px, 1fr);
+  gap: 16px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(37,99,235,0.08);
+}
+.cr-row:last-child { border-bottom: none; }
+.cr-row span:last-child { text-align: right; }
+@media (max-width: 980px) {
+  .calc-body-grid { grid-template-columns: 1fr; }
+  .tax-pills { padding-bottom: 8px; }
+}
+@media (max-width: 680px) {
+  .tax-pills { gap: 10px; }
+  .tax-pill { min-width: 120px; padding: 10px 14px; }
+  .cp-actions { grid-template-columns: 1fr; }
+}
+
+.tl-item {
+  padding: 12px 16px; border-radius: 10px;
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.09);
+  cursor: pointer; transition: all .18s;
+}
+.tl-item:hover { background: rgba(255,255,255,0.11); }
+.tl-item.active { background: var(--blue); border-color: var(--blue-light); }
+.tl-name { font-size: 12px; font-weight: 700; color: var(--white); margin-bottom: 2px; }
+.tl-rate { font-size: 10px; color: rgba(255,255,255,0.45); }
+.tl-item.active .tl-rate { color: rgba(255,255,255,0.7); }
+.tax-pills .tax-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 46px;
+  line-height: 1.15;
+  padding-top: 0;
+  padding-bottom: 0;
+  overflow: hidden;
+}
+.tax-pills .compact-tax-pill {
+  font-size: 11.5px;
+  white-space: normal;
+}
+.calc-panel {
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius); padding: 28px;
+}
+.cp-name { font-size: 20px; font-weight: 900; color: var(--white); margin-bottom: 6px; }
+.cp-about { font-size: 13px; color: rgba(255,255,255,0.45); margin-bottom: 20px; line-height: 1.65; }
+.cp-formula {
+  padding: 14px 16px; border-radius: 10px;
+  background: rgba(0,0,0,0.25); border: 1px solid rgba(255,255,255,0.07);
+  font-family: var(--font-finance); font-size: 12px;
+  color: #7fb3e0; white-space: pre-line; line-height: 1.8; margin-bottom: 22px;
+}
+.cp-inputs { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 16px; }
+.cp-field-label {
+  display: block; font-size: 10px; font-weight: 700;
+  color: rgba(255,255,255,0.4); letter-spacing: .05em;
+  text-transform: uppercase; margin-bottom: 6px;
+}
+.cp-input, .cp-select {
+  width: 100%; padding: 11px 14px; border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.14); background: rgba(255,255,255,0.08);
+  color: var(--white); font-size: 14px; font-family: var(--font-mono);
+  outline: none; transition: border .2s;
+}
+.cp-input:focus, .cp-select:focus { border-color: var(--blue-light); background: rgba(255,255,255,0.13); }
+.cp-select option { background: var(--navy); color: var(--white); }
+.cp-actions {
+  display: grid; grid-template-columns: 140px 1fr; gap: 12px;
+}
+.cp-go, .cp-reset {
+  width: 100%; padding: 13px; border-radius: 10px;
+  font-size: 14px; font-weight: 800; border: none; cursor: pointer;
+  font-family: inherit; transition: all .2s;
+}
+.cp-go { background: var(--blue-light); color: var(--white); }
+.cp-go:hover { background: #4a90d9; transform: translateY(-1px); }
+.cp-reset {
+  background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.78);
+  border: 1px solid rgba(255,255,255,0.16);
+}
+.cp-reset:hover { background: rgba(255,255,255,0.14); color: var(--white); transform: translateY(-1px); }
+.cp-result {
+  margin-top: 14px; border-radius: 10px; padding: 14px;
+  background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.07);
+  display: none; animation: fadeUp .3s ease;
+}
+.cp-result.show { display: block; }
+.cr-row {
+  display: grid; grid-template-columns: minmax(150px, .7fr) minmax(0, 1.3fr); gap: 14px;
+  justify-content: space-between; padding: 7px 0;
+  font-size: 12.5px; border-bottom: 1px solid rgba(255,255,255,0.05);
+  color: rgba(255,255,255,0.55);
+}
+.cr-row span:last-child { text-align: right; overflow-wrap: anywhere; }
+.cr-row:last-child { border: none; }
+.cr-row.cr-final, .cr-row.cr-after { font-size: 15px; font-weight: 900; color: var(--white); padding-top: 10px; }
+.cr-row.cr-final span:last-child, .cr-row.cr-after span:last-child { color: #7fb3e0; font-family: var(--font-finance); }
+.cr-row.cr-after { padding-top: 5px; }
+.cr-bracket { margin-top: 10px; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.06); }
+.cr-bracket-label { font-size: 10px; color: rgba(255,255,255,0.25); font-weight: 700; letter-spacing: .07em; text-transform: uppercase; margin-bottom: 5px; }
+.cr-brow { display: flex; justify-content: space-between; font-size: 11px; padding: 2px 0; font-family: var(--font-mono); color: rgba(255,255,255,0.3); }
+.cr-brow.hit { color: #7fb3e0; font-weight: 600; }
+.cr-error {
+  padding: 12px 14px; border-radius: 10px;
+  background: rgba(224,58,58,0.12); border: 1px solid rgba(224,58,58,0.28);
+  color: #ffc9c9; font-size: 13px; font-weight: 700;
+}
+
+/* Specific Tax system */
+.specific-system .cp-name { display: flex; align-items: center; gap: 10px; }
+.specific-system .cp-name::before {
+  content: ""; width: 34px; height: 34px; border-radius: 8px;
+  background: linear-gradient(135deg, var(--green) 0%, var(--blue-light) 100%);
+  box-shadow: 0 10px 24px rgba(42,157,143,0.22);
+}
+.specific-system .cp-inputs { align-items: end; }
+.specific-rate-board {
+  display: grid; grid-template-columns: 1.2fr 1fr .8fr; gap: 12px;
+  margin-top: 16px;
+}
+.specific-rate-card {
+  padding: 14px; border-radius: 10px;
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+}
+.specific-rate-title {
+  color: var(--white); font-size: 12px; font-weight: 900;
+  margin-bottom: 10px; text-transform: uppercase; letter-spacing: .06em;
+}
+.specific-rate-card div:not(.specific-rate-title) {
+  display: flex; justify-content: space-between; gap: 10px; align-items: center;
+  padding: 7px 0; color: rgba(255,255,255,0.58); font-size: 12px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.specific-rate-card strong {
+  color: #9fd7ca; font-family: var(--font-finance); font-size: 12px;
+}
+
+/* Patent Tax custom calculator */
+.patent-panel { max-width: 100%; }
+.main-patent-wide { grid-column: 1 / -1; }
+.patent-category-grid {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px; margin: 18px 0 20px;
+}
+.patent-option {
+  display: grid; grid-template-columns: auto 1fr; gap: 10px; align-items: start;
+  padding: 13px 14px; border-radius: 10px;
+  background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12);
+  cursor: pointer; transition: border .2s, background .2s;
+}
+.patent-option:hover { background: rgba(255,255,255,0.11); border-color: rgba(91,159,224,0.55); }
+.patent-option input { margin-top: 3px; accent-color: var(--blue-light); }
+.patent-option strong { display: block; color: var(--white); font-size: 13px; line-height: 1.35; }
+.patent-option em {
+  display: block; margin-top: 3px; color: rgba(255,255,255,0.52);
+  font-size: 11px; font-style: normal; line-height: 1.45;
+}
+.patent-business-grid {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px; margin-bottom: 16px;
+}
+.patent-business-box {
+  padding: 16px; border-radius: 10px;
+  background: rgba(0,0,0,0.18); border: 1px solid rgba(255,255,255,0.08);
+}
+.patent-box-head {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 14px; min-height: 42px;
+}
+.patent-box-title { font-size: 15px; font-weight: 900; color: var(--white); }
+.patent-box-note { margin-top: 3px; color: rgba(255,255,255,0.42); font-size: 11.5px; }
+.patent-spaced-label { margin-top: 14px; }
+.patent-activity-list { display: grid; gap: 10px; margin-top: 12px; }
+.patent-activity-row {
+  display: grid; grid-template-columns: 1fr 120px; gap: 10px; align-items: center;
+  color: rgba(255,255,255,0.68); font-size: 12.5px;
+}
+.patent-activity-row .cp-input { padding: 9px 11px; text-align: right; }
+.patent-empty {
+  padding: 12px; border-radius: 10px; border: 1px dashed rgba(255,255,255,0.14);
+  color: rgba(255,255,255,0.32); font-size: 12px; text-align: center;
+}
+.patent-result.show { display: block; }
+
+body:not(.home-page) .calc-section {
+  background: transparent;
+}
+
+body:not(.home-page) .calc-label,
+body:not(.home-page) .calc-h2,
+body:not(.home-page) .cp-name,
+body:not(.home-page) .specific-rate-title,
+body:not(.home-page) .patent-box-title {
+  color: var(--blue);
+}
+
+body:not(.home-page) .calc-sub,
+body:not(.home-page) .cp-about,
+body:not(.home-page) .tl-rate,
+body:not(.home-page) .patent-box-note,
+body:not(.home-page) .patent-option em,
+body:not(.home-page) .specific-rate-card div:not(.specific-rate-title) {
+  color: var(--ink2);
+}
+
+body:not(.home-page) .calc-panel,
+body:not(.home-page) .specific-rate-card,
+body:not(.home-page) .patent-option,
+body:not(.home-page) .patent-business-box {
+  background: rgba(255,255,255,0.88);
+  border-color: rgba(74,144,217,0.18);
+  box-shadow: 0 14px 34px rgba(37,99,168,0.08);
+  backdrop-filter: blur(8px);
+}
+
+body:not(.home-page) .tl-item {
+  background: rgba(255,255,255,0.8);
+  border-color: rgba(74,144,217,0.18);
+}
+
+body:not(.home-page) .tl-item:hover {
+  background: #eef6fc;
+}
+
+body:not(.home-page) .tl-item.active {
+  background: var(--blue);
+  border-color: var(--blue);
+}
+
+body:not(.home-page) .tl-name,
+body:not(.home-page) .patent-option strong {
+  color: var(--blue);
+}
+
+body:not(.home-page) .tl-item.active .tl-name,
+body:not(.home-page) .tl-item.active .tl-rate {
+  color: var(--white);
+}
+
+body:not(.home-page) .cp-formula,
+body:not(.home-page) .cp-result {
+  background: #f7fbff;
+  border-color: rgba(74,144,217,0.18);
+  color: var(--blue);
+}
+
+body:not(.home-page) .cp-field-label,
+body:not(.home-page) .cr-bracket-label {
+  color: var(--blue);
+}
+
+body:not(.home-page) .cp-input,
+body:not(.home-page) .cp-select {
+  background: var(--white);
+  border-color: rgba(74,144,217,0.22);
+  color: var(--ink);
+}
+
+body:not(.home-page) .cp-select option {
+  background: var(--white);
+  color: var(--ink);
+}
+
+body:not(.home-page) .cp-go {
+  background: var(--blue);
+}
+
+body:not(.home-page) .cp-go:hover {
+  background: var(--blue-mid);
+}
+
+body:not(.home-page) .cp-reset {
+  background: #eef6fc;
+  border-color: rgba(74,144,217,0.22);
+  color: var(--blue);
+}
+
+body:not(.home-page) .cr-row,
+body:not(.home-page) .cr-brow {
+  border-color: rgba(74,144,217,0.14);
+  color: var(--ink2);
+}
+
+body:not(.home-page) .cr-row.cr-final,
+body:not(.home-page) .cr-row.cr-after,
+body:not(.home-page) .cr-row.cr-final span:last-child,
+body:not(.home-page) .cr-row.cr-after span:last-child,
+body:not(.home-page) .cr-brow.hit,
+body:not(.home-page) .specific-rate-card strong {
+  color: var(--blue);
+}

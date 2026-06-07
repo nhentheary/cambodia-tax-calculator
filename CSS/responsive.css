@@ -1,0 +1,908 @@
+/* ── RESPONSIVE DESIGN ── */
+
+/* ── TABLET & MEDIUM SCREENS (769px - 1024px) ── */
+@media (max-width: 1024px) {
+  .section, .hiw-section, .calc-section, .summary-section, footer {
+    padding: var(--pad-v) var(--pad-h);
+  }
+  
+  .section-h2 {
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+  }
+  
+  .tax-grid, .tax-grid-2 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .sum-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .steps-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .steps-row::before {
+    display: none;
+  }
+  
+  .calc-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .tax-list {
+    margin-bottom: 1.5rem;
+  }
+  
+  .calc-panel {
+    width: 100%;
+  }
+  
+  .cp-inputs {
+    grid-template-columns: 1fr;
+  }
+  
+  .cp-actions {
+    grid-template-columns: 1fr;
+  }
+  
+  .specific-rate-board {
+    grid-template-columns: 1fr;
+  }
+  
+  .patent-category-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .patent-business-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(2rem, 4vw, 3rem);
+  }
+  
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}
+
+/* ── MOBILE & SMALL TABLETS (481px - 768px) ── */
+@media (max-width: 768px) {
+  body {
+    font-size: 15px;
+  }
+  
+  .section, .hiw-section, .calc-section, .summary-section, footer {
+    padding: var(--pad-v) var(--pad-h);
+  }
+  
+  .section-h2 {
+    font-size: clamp(1.5rem, 4vw, 1.8rem);
+  }
+  
+  .section-sub {
+    font-size: clamp(13px, 2vw, 14px);
+    margin-bottom: 2rem;
+  }
+  
+  /* ── TAX CARDS ── */
+  .tax-grid, .tax-grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  
+  .tax-card {
+    min-height: 200px;
+    padding: 16px;
+  }
+  
+  .tc-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+  }
+  
+  .tc-name {
+    font-size: 12px;
+  }
+  
+  /* ── HERO ── */
+  .hero {
+    min-height: auto;
+    gap: 1.5rem;
+  }
+  
+  .hero-content {
+    max-width: 100%;
+  }
+  
+  .hero-h1 {
+    font-size: clamp(1.6rem, 5vw, 2.2rem);
+  }
+  
+  .hero-right {
+    width: 100%;
+    min-height: auto;
+  }
+  
+  .hero-main-card {
+    width: 100%;
+    max-width: none;
+  }
+  
+  .hero-stats {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    width: 100%;
+  }
+  
+  /* ── CALCULATOR ── */
+  .calc-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .tax-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-bottom: 1.5rem;
+  }
+  
+  .tl-item {
+    padding: 10px 12px;
+    font-size: 11px;
+    min-height: 44px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .calc-panel {
+    width: 100%;
+    padding: clamp(1.5rem, 3vw, 2rem);
+  }
+  
+  .cp-name {
+    font-size: clamp(16px, 4vw, 20px);
+  }
+  
+  .cp-inputs {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .cp-field-label {
+    font-size: 9px;
+  }
+  
+  .cp-input, .cp-select {
+    padding: clamp(10px, 2vw, 11px) clamp(10px, 2vw, 14px);
+    font-size: clamp(13px, 2vw, 14px);
+  }
+  
+  .cp-actions {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  
+  .cp-go, .cp-reset {
+    width: 100%;
+    padding: clamp(12px, 2vw, 13px);
+    min-height: var(--touch-min);
+  }
+  
+  .cr-row {
+    grid-template-columns: 1fr;
+    gap: 4px;
+    padding: 8px 0;
+  }
+  
+  .cr-row span:last-child {
+    text-align: left;
+  }
+  
+  /* ── HOW IT WORKS ── */
+  .steps-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .step {
+    padding: 0 12px;
+  }
+  
+  .step-num {
+    width: 48px;
+    height: 48px;
+    font-size: 14px;
+  }
+  
+  .step-title {
+    font-size: 13px;
+  }
+  
+  /* ── SUMMARY ── */
+  .sum-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .sum-card {
+    padding: clamp(1.5rem, 3vw, 2rem);
+  }
+  
+  .sum-name {
+    font-size: 14px;
+  }
+  
+  .sum-body {
+    font-size: clamp(12px, 2vw, 12.5px);
+  }
+  
+  .sum-formula, .sum-example {
+    font-size: clamp(11px, 2vw, 12px);
+    padding: clamp(12px, 2vw, 14px);
+  }
+  
+  /* ── SPECIFIC TAX ── */
+  .specific-rate-board {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  
+  .specific-rate-card {
+    padding: 12px;
+  }
+  
+  /* ── PATENT TAX ── */
+  .patent-category-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .patent-business-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .patent-option {
+    padding: clamp(10px, 2vw, 13px);
+  }
+  
+  .patent-activity-row {
+    grid-template-columns: 1fr 100px;
+    gap: 8px;
+  }
+  
+  /* ── FOOTER ── */
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .footer-col h4 {
+    margin-bottom: 12px;
+  }
+  
+  .footer-col a {
+    margin-bottom: 8px;
+    font-size: 12px;
+  }
+  
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding-top: 16px;
+  }
+  
+  .footer-bottom p {
+    font-size: 11px;
+  }
+}
+
+/* ── SMALL PHONES (max-width: 480px) ── */
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+  
+  .section, .hiw-section, .calc-section, .summary-section, footer {
+    padding: clamp(1.5rem, 4vw, 2rem) clamp(1rem, 3vw, 1.5rem);
+  }
+  
+  .section-h2 {
+    font-size: clamp(1.3rem, 4vw, 1.6rem);
+    margin-bottom: 10px;
+  }
+  
+  .section-sub {
+    font-size: 13px;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* ── TOP BAR ── */
+  .top-bar {
+    padding: 0;
+  }
+  
+  .top-logo {
+    width: 42px;
+    height: 42px;
+  }
+  
+  .top-identity {
+    min-width: 0;
+  }
+  
+  .top-ministry {
+    font-size: 10px;
+  }
+  
+  .top-dept {
+    font-size: 20px;
+  }
+  
+  .gdt-badge {
+    display: none;
+  }
+  
+  /* ── NAV BAR ── */
+  .nav-bar {
+    top: auto;
+  }
+  
+  .nav-item {
+    padding: 0 12px;
+    height: 44px;
+    font-size: 11px;
+  }
+  
+  .nav-icon {
+    font-size: 14px;
+  }
+  
+  /* ── HERO ── */
+  .hero {
+    min-height: auto;
+    gap: 1rem;
+    padding: clamp(1.5rem, 3vw, 2rem);
+  }
+  
+  .hero-eyebrow {
+    font-size: 9px;
+    margin-bottom: 1rem;
+    padding: 4px 10px;
+  }
+  
+  .hero-h1 {
+    font-size: clamp(1.4rem, 4vw, 1.8rem);
+    line-height: 1.15;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-sub {
+    font-size: clamp(12px, 2vw, 13px);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+  
+  .hero-actions {
+    gap: 0.75rem;
+    width: 100%;
+  }
+  
+  .btn-primary, .btn-secondary {
+    flex: 1;
+    justify-content: center;
+    padding: clamp(11px, 2vw, 12px) clamp(12px, 2vw, 16px);
+    font-size: 12px;
+  }
+  
+  .btn-primary svg, .btn-secondary svg {
+    display: none;
+  }
+  
+  .hero-stats {
+    gap: 1rem;
+  }
+  
+  .hero-stat-num {
+    font-size: 18px;
+  }
+  
+  .hero-stat-label {
+    font-size: 9px;
+  }
+  
+  /* ── TAX CARDS ── */
+  .tax-grid, .tax-grid-2 {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  
+  .tax-card {
+    min-height: 180px;
+    padding: 14px;
+  }
+  
+  .tc-name {
+    font-size: 12px;
+  }
+  
+  .tc-rate {
+    font-size: 10px;
+  }
+  
+  .tc-desc {
+    font-size: 10px;
+  }
+  
+  .tc-btn {
+    font-size: 10px;
+  }
+  
+  /* ── CALCULATOR ── */
+  .calc-label {
+    font-size: 9px;
+  }
+  
+  .calc-h2 {
+    font-size: clamp(1.3rem, 4vw, 1.8rem);
+  }
+  
+  .calc-sub {
+    font-size: 12px;
+  }
+  
+  .tax-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+  
+  .tl-item {
+    padding: 8px 10px;
+    font-size: 10px;
+    min-height: 44px;
+  }
+  
+  .calc-panel {
+    padding: clamp(1.25rem, 2vw, 1.5rem);
+  }
+  
+  .cp-name {
+    font-size: clamp(14px, 3vw, 16px);
+    margin-bottom: 8px;
+  }
+  
+  .cp-about {
+    font-size: 12px;
+    margin-bottom: 14px;
+  }
+  
+  .cp-formula {
+    padding: 12px 14px;
+    font-size: 11px;
+  }
+  
+  .cp-field-label {
+    font-size: 8px;
+    margin-bottom: 4px;
+  }
+  
+  .cp-input, .cp-select {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+  
+  .cp-go, .cp-reset {
+    padding: clamp(11px, 2vw, 12px);
+    font-size: 12px;
+  }
+  
+  /* ── STEPS ── */
+  .steps-row {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .step {
+    padding: 0;
+  }
+  
+  .step-num {
+    width: 44px;
+    height: 44px;
+    margin: 0 auto 12px;
+    font-size: 12px;
+  }
+  
+  .step-title {
+    font-size: 12px;
+  }
+  
+  .step-desc {
+    font-size: 11px;
+  }
+  
+  /* ── SUMMARY ── */
+  .sum-card {
+    padding: clamp(1rem, 2vw, 1.25rem);
+  }
+  
+  .sum-name {
+    font-size: 13px;
+  }
+  
+  .sum-body {
+    font-size: 11px;
+  }
+  
+  .sum-formula {
+    font-size: 10px;
+    padding: 10px 12px;
+  }
+  
+  .sum-example {
+    font-size: 11px;
+    padding: 10px 12px;
+  }
+  
+  /* ── SPECIFIC TAX ── */
+  .specific-rate-board {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  
+  .specific-rate-title {
+    font-size: 11px;
+  }
+  
+  /* ── PATENT ── */
+  .patent-category-grid {
+    grid-template-columns: 1fr;
+    margin: 12px 0 16px;
+  }
+  
+  .patent-option {
+    padding: clamp(10px, 2vw, 12px);
+  }
+  
+  .patent-option strong {
+    font-size: 12px;
+  }
+  
+  .patent-option em {
+    font-size: 10px;
+    margin-top: 2px;
+  }
+  
+  .patent-business-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .patent-box-title {
+    font-size: 13px;
+  }
+  
+  .patent-activity-row {
+    grid-template-columns: 1fr 90px;
+    gap: 6px;
+    font-size: 11px;
+  }
+  
+  /* ── FOOTER ── */
+  footer {
+    padding: clamp(1.5rem, 3vw, 2rem) clamp(1rem, 2vw, 1.5rem);
+  }
+  
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .footer-logo {
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+  
+  .footer-tagline {
+    font-size: 11px;
+  }
+  
+  .footer-col h4 {
+    font-size: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .footer-col a {
+    font-size: 11px;
+    margin-bottom: 6px;
+  }
+  
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding-top: 12px;
+  }
+  
+  .footer-bottom p {
+    font-size: 10px;
+  }
+  
+  /* ── MODAL ── */
+  .modal-box {
+    width: 95%;
+    padding: clamp(1.5rem, 3vw, 2rem);
+    max-height: 90vh;
+  }
+  
+  .modal-box h2 {
+    font-size: clamp(16px, 4vw, 22px);
+  }
+  
+  .modal-box p {
+    font-size: 12px;
+  }
+  
+  .modal-formula {
+    font-size: 11px;
+    padding: 12px 14px;
+  }
+}
+
+/* ── FINAL RESPONSIVE HARDENING ── */
+.sum-formula,
+.modal-formula,
+.cp-formula,
+.specific-rate-card,
+.cr-bracket {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-wrap: anywhere;
+}
+
+.sum-top,
+.footer-bottom,
+.hmc-row,
+.cr-brow,
+.specific-rate-card div:not(.specific-rate-title) {
+  min-width: 0;
+}
+
+.sum-top {
+  gap: 12px;
+}
+
+.sum-top > div {
+  min-width: 0;
+}
+
+.sum-tag {
+  white-space: nowrap;
+}
+
+.hmc-row span,
+.cr-brow span,
+.specific-rate-card strong {
+  overflow-wrap: anywhere;
+}
+
+.nav-overlay {
+  z-index: 96;
+}
+
+@media (max-width: 1024px) {
+  .hero {
+    min-height: auto;
+    flex-direction: column;
+    align-items: stretch;
+    padding: clamp(2.5rem, 6vw, 4rem) var(--pad-h);
+  }
+
+  .hero-content,
+  .hero-right,
+  .hero-main-card {
+    max-width: 100%;
+  }
+
+  .hero-right {
+    min-height: auto;
+  }
+
+  .hmc-calc-grid.has-result {
+    grid-template-columns: 1fr;
+  }
+
+  .hmc-result {
+    border-left: 0;
+    border-top: 1px solid var(--border);
+  }
+}
+
+@media (min-width: 1025px) {
+  .hero-h1 .accent {
+    display: block;
+  }
+
+  .hero-stat-divider {
+    display: block;
+  }
+
+  .hmc-calc-grid.has-result {
+    grid-template-columns: minmax(0, 1fr) minmax(220px, .95fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .top-bar {
+    padding: 0;
+  }
+
+  .top-bar-right {
+    display: flex;
+  }
+
+  .top-ministry {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .nav-bar {
+    box-shadow: none;
+    width: 100%;
+    right: auto;
+  }
+
+  .nav-overlay.active {
+    display: none;
+  }
+
+  .hero-actions {
+    align-items: stretch;
+  }
+
+  .btn-primary,
+  .btn-secondary,
+  .hmc-calc-btn,
+  .cp-go,
+  .cp-reset,
+  .tc-btn {
+    min-height: 44px;
+  }
+
+  .sum-card,
+  .calc-panel,
+  .hero-main-card,
+  .tax-card {
+    border-radius: 12px;
+  }
+
+  .sum-formula,
+  .modal-formula,
+  .cp-formula {
+    line-height: 1.65;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    flex: none;
+  }
+
+  .tax-list {
+    grid-template-columns: 1fr;
+  }
+
+  .sum-top {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .patent-activity-row {
+    grid-template-columns: 1fr;
+  }
+
+  .patent-activity-row .cp-input {
+    text-align: left;
+  }
+
+  .hmc-pills {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hmc-pill {
+    justify-content: center;
+  }
+
+  .hmc-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+
+  .hmc-row span:last-child {
+    text-align: left;
+    font-family: var(--font-finance);
+  }
+}
+
+/* ── FOOTER GRID REBALANCE ── */
+@media (min-width: 1025px) {
+  .footer-grid {
+    grid-template-columns: minmax(240px, 1.4fr) repeat(3, minmax(140px, 1fr));
+    gap: clamp(1.5rem, 3vw, 3rem);
+  }
+
+  .footer-grid > div:first-child {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 1024px) {
+  .footer-grid {
+    grid-template-columns: repeat(3, minmax(150px, 1fr));
+    gap: 28px 24px;
+  }
+
+  .footer-grid > div:first-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 768px) {
+  footer {
+    padding: 2rem 1.25rem 1.5rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, minmax(140px, 1fr));
+    gap: 24px 20px;
+    margin-bottom: 1.75rem;
+  }
+
+  .footer-grid > div:first-child {
+    grid-column: 1 / -1;
+  }
+
+  .footer-tagline {
+    max-width: 36rem;
+    font-size: 12px;
+  }
+
+  .footer-col h4 {
+    font-size: 11px;
+    margin-bottom: 10px;
+  }
+
+  .footer-col a {
+    min-height: 38px;
+    margin-bottom: 0;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 360px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid > div:first-child {
+    grid-column: auto;
+  }
+}

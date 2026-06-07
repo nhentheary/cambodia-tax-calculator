@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Patent Tax explanation, formula, rules, and example.">
+  <title>Patent Tax - Cambodia Tax Calculator</title>
+  <link rel="icon" href="../images/logo-3d.png">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Kantumruy+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../CSS/variables.css">
+  <link rel="stylesheet" href="../CSS/base.css">
+  <link rel="stylesheet" href="../CSS/layout.css">
+  <link rel="stylesheet" href="../CSS/hero.css">
+  <link rel="stylesheet" href="../CSS/sections.css">
+  <link rel="stylesheet" href="../CSS/calculator.css">
+  <link rel="stylesheet" href="../CSS/modal.css">
+  <link rel="stylesheet" href="../CSS/footer.css">
+  <link rel="stylesheet" href="../CSS/responsive.css">
+</head>
+<body>
+  <!-- Header: website identity -->
+  <header class="top-bar">
+  <div class="top-shell">
+    <div class="top-left-cluster">
+      <div class="top-bar-left">
+      <div class="top-logo"><img src="../images/logo-3d.png" alt="TaxCalc Cambodia logo"></div>
+      <div class="top-identity">
+        <div class="top-ministry" id="lbl-ministry">Ministry of Economy and Finance &nbsp;&middot;&nbsp; General Department of Taxation</div>
+        <div class="top-dept" id="lbl-dept">Tax Calculator</div>
+      </div>
+    </div>
+      <nav class="nav-bar" id="nav-bar">
+    <a class="nav-item" href="home.html" id="nav-home">
+      <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      <span id="lbl-home">Home</span>
+    </a>
+    <a class="nav-item active" href="tax-guide.html" id="nav-guide">
+      <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+      <span id="lbl-guide">Tax Guide</span>
+    </a>
+    <a class="nav-item" href="calculate.html" id="nav-calc">
+      <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg>
+      <span id="lbl-calc">Calculate</span>
+    </a>
+    <a class="nav-item" href="tax-summary.html" id="nav-summary">
+      <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+      <span id="lbl-summary-nav">Tax Summary</span>
+    </a>
+  </nav>
+    </div>
+    <form class="site-search" role="search" action="tax-guide.html" method="get" onsubmit="return handleSiteSearch(event)">
+      <svg class="site-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input class="site-search-input" type="search" name="q" placeholder="Search tax laws, sub-decrees, or guides..." aria-label="Search tax laws, sub-decrees, or guides">
+    </form>
+    <div class="top-bar-right">
+      <button class="hamburger-btn" id="hamburger-btn" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <span class="gdt-badge">GDT 2026</span>
+    </div>
+  </div>
+</header>
+
+<!-- Navigation overlay (mobile) -->
+<div class="nav-overlay" id="nav-overlay"></div>
+  <!-- Main content: page-specific section starts here -->
+<section class="summary-section" id="summary">
+  <div class="section-inner">
+    <div class="eyebrow reveal">Tax Detail</div>
+    <h2 class="section-h2 reveal">Patent Tax</h2>
+    <div class="sum-grid detail-sum-grid">
+      <div class="sum-card reveal">
+        <div class="sum-top"><div><div class="sum-name">Patent Tax</div><div class="sum-full">Annual business registration tax</div></div><span class="sum-tag st-gold">PAT</span></div>
+        <div class="sum-body">Patent Tax is an annual business registration tax paid by registered businesses. It is a business license tax, not an intellectual property patent tax, and is required for operating legally in Cambodia even if no profit is made.</div>
+        <div class="sum-formula">Exchange rate: 1 USD = 4,000 KHR
+
+Annual fixed fee by taxpayer class:
+
+Small Taxpayer (Annual Turnover: 250 million - 700 million KHR)           
+Patent Tax: 400,000 KHR
+
+Medium Taxpayer (Annual Turnover: 700 million - 4,000 million KHR)        
+Patent Tax: 1,200,000 KHR
+
+Large Taxpayer (Annual Turnover: 4,000 million - 10,000 million KHR)      
+Patent Tax: 3,000,000 KHR
+
+Large Taxpayer (Annual Turnover: Over 10,000 million KHR)                 
+Patent Tax: 5,000,000 KHR
+
+Commencement Date for New Business:
+January 1 - June 30:
+New Business Patent Tax = Base New Business Patent Tax × 100%
+
+July 1 - December 31:
+New Business Patent Tax = Base New Business Patent Tax × 50%</div>
+        <div class="sum-example">Example: Medium taxpayer with 6 old branches and 6 new branches started July-December → KHR 7,200,000 + KHR 3,600,000 = KHR 10,800,000.</div>
+      </div>
+    </div>
+  </div>
+</section>
+  <!-- Footer: repeated links and project note -->
+  <footer id="contact">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">Tax<span>Calc</span></div>
+        <div class="footer-tagline" id="lbl-footer-tag">Cambodia tax calculator based on official GDT 2024 rates. Built for students, individuals, and businesses.</div>
+      </div>
+      <div class="footer-col">
+        <h4 id="lbl-fc1">Calculators</h4>
+        <a href="calculate.html" id="lbl-fc1-1">Salary Tax</a>
+        <a href="calculate.html" id="lbl-fc1-2">VAT</a>
+        <a href="calculate.html" id="lbl-fc1-3">Prepayment Tax</a>
+        <a href="calculate.html" id="lbl-fc1-4">Withholding Tax</a>
+        <a href="calculate.html" id="lbl-fc1-5">Minimum Tax</a>
+      </div>
+      <div class="footer-col">
+        <h4 id="lbl-fc2">More Taxes</h4>
+        <a href="tax-on-income.html">Income Tax</a>
+        <a href="patent-tax.html">Patent Tax</a>
+        <a href="property-tax.html">Property Tax</a>
+        <a href="specific-tax.html">Specific Tax</a>
+        <a href="accommodation-tax.html">Accommodation Tax</a>
+        <a href="transfer-tax.html">Transfer Tax</a>
+      </div>
+      <div class="footer-col">
+        <h4 id="lbl-fc3">Resources</h4>
+        <a href="tax-summary.html" id="lbl-fc3-1">Tax Summary</a>
+        <a href="tax-guide.html#how" id="lbl-fc3-2">How it works</a>
+        <a href="tax-guide.html" id="lbl-fc3-3">Tax Guide</a>
+        <a href="https://www.tax.gov.kh" target="_blank">GDT Website ↗</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p id="lbl-footer-copy">© 2024 TaxCalc Cambodia — For educational use. Verify figures with a licensed tax advisor.</p>
+      <p style="font-family:var(--font-mono);font-size:11px;color:rgba(255,255,255,0.15)">GDT · Law on Taxation (LoT) · 4,000 KHR/USD</p>
+    </div>
+  </footer>  <!-- Modal: used by the JavaScript tax detail popup function -->
+  <div class="modal-overlay" id="modal-overlay" onclick="closeModal(event)">
+    <div class="modal-box" id="modal-box"></div>
+  </div>
+
+  <!-- Scripts: order matters because calculator.js uses data from config.js and tax.js -->
+  <script src="../js/config.js"></script>
+  <script src="../js/tax.js"></script>
+  <script src="../js/calculator.js"></script>
+  <script src="../js/history.js"></script>
+  <script>
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+    const navBar = document.getElementById('nav-bar');
+    const navOverlay = document.getElementById('nav-overlay');
+    const navItems = document.querySelectorAll('.nav-item');
+    function closeMenu() {
+      hamburgerBtn.classList.remove('active');
+      navBar.classList.remove('active');
+      navOverlay.classList.remove('active');
+      hamburgerBtn.setAttribute('aria-expanded', 'false');
+    }
+    function openMenu() {
+      hamburgerBtn.classList.add('active');
+      navBar.classList.add('active');
+      navOverlay.classList.add('active');
+      hamburgerBtn.setAttribute('aria-expanded', 'true');
+    }
+    hamburgerBtn.addEventListener('click', () => {
+      navBar.classList.contains('active') ? closeMenu() : openMenu();
+    });
+    navOverlay.addEventListener('click', closeMenu);
+    navItems.forEach(item => item.addEventListener('click', closeMenu));
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navBar.classList.contains('active')) closeMenu();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,160 @@
+/* ── TAX CARDS ── */
+.taxes-section { background: var(--white); }
+.tax-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; margin-bottom: 16px; }
+.tax-grid-2 { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
+.tax-card {
+  background: var(--white); border-radius: var(--radius);
+  border: 1.5px solid rgba(74,144,217,0.1);
+  padding: 22px 20px; cursor: pointer; transition: all .25s;
+  position: relative; overflow: hidden;
+  min-height: 230px; display: flex; flex-direction: column;
+}
+.tax-card::before {
+  content: ''; position: absolute;
+  top: 0; left: 0; right: 0; height: 3px;
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+.tc-salary::before  { background: var(--blue); }
+.tc-vat::before     { background: var(--green); }
+.tc-top::before     { background: var(--amber); }
+.tc-wht::before     { background: var(--purple); }
+.tc-mt::before      { background: var(--teal); }
+.tc-toi::before     { background: #e03a3a; }
+.tc-patent::before  { background: #c9a227; }
+.tc-property::before{ background: #2a9d8f; }
+.tc-specific::before{ background: #7c5cbf; }
+.tc-accommodation::before{ background: #2a9d8f; }
+.tc-transfer::before{ background: #e07a30; }
+.tax-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: rgba(74,144,217,0.22); }
+.tc-icon {
+  width: 42px; height: 42px; border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px; margin-bottom: 14px;
+}
+.tc-name { font-size: 13px; font-weight: 800; color: var(--ink); margin-bottom: 3px; line-height: 1.3; }
+.tc-rate { font-size: 11px; color: var(--ink3); font-weight: 600; margin-bottom: 8px; }
+.tc-desc { font-size: 11px; color: var(--ink2); line-height: 1.6; }
+.tc-btn {
+  margin-top: auto; width: 100%; padding: 7px;
+  border-radius: 8px; font-size: 11px; font-weight: 700;
+  cursor: pointer; border: 1.5px solid rgba(74,144,217,0.18);
+  background: transparent; font-family: inherit;
+  color: var(--blue); transition: all .2s;
+}
+.tc-btn:hover { background: var(--sky); border-color: var(--blue-mid); }
+
+/* ── HOW IT WORKS ── */
+.hiw-section {
+  background: linear-gradient(135deg, #eef6fc 0%, #d6e8f8 100%);
+  padding: 80px 80px;
+}
+.steps-row {
+  display: grid; grid-template-columns: repeat(4,1fr);
+  gap: 0; margin-top: 48px; position: relative;
+}
+.steps-row::before {
+  content: ''; position: absolute;
+  top: 27px; left: 12%; right: 12%;
+  height: 2px; background: rgba(37,99,168,0.18);
+  border-radius: 2px; z-index: 0;
+}
+.step { text-align: center; padding: 0 16px; position: relative; z-index: 1; }
+.step-num {
+  width: 54px; height: 54px; border-radius: 50%;
+  margin: 0 auto 18px;
+  background: var(--white); border: 2px solid rgba(37,99,168,0.2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px; font-weight: 900; color: var(--blue);
+  font-family: var(--font-mono); transition: all .3s;
+  box-shadow: 0 2px 12px rgba(37,99,168,0.1);
+}
+.step:hover .step-num { background: var(--navy); color: var(--white); border-color: var(--navy); transform: scale(1.1); }
+.step-title { font-size: 14px; font-weight: 800; color: var(--ink); margin-bottom: 8px; }
+.step-desc { font-size: 12px; color: var(--ink2); line-height: 1.65; }
+/* ── SUMMARY ── */
+.summary-section { background: var(--white); padding: 72px 80px; }
+.sum-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin: 40px auto 0; }
+.detail-sum-grid {
+  width: 100%;
+  max-width: 1040px;
+  grid-template-columns: 1fr;
+}
+.sum-card {
+  background: #f7fbff; border-radius: var(--radius);
+  border: 1.5px solid rgba(74,144,217,0.1);
+  padding: 26px; transition: all .22s;
+}
+.sum-card:hover { border-color: rgba(74,144,217,0.25); box-shadow: var(--shadow); transform: translateY(-2px); }
+.sum-top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 12px; }
+.sum-name { font-size: 15px; font-weight: 800; color: var(--ink); margin-bottom: 3px; }
+.sum-full { font-size: 11px; color: var(--ink3); font-weight: 600; }
+.sum-tag {
+  padding: 4px 12px; border-radius: 20px;
+  font-size: 10px; font-weight: 800; letter-spacing: .05em;
+  text-transform: uppercase; flex-shrink: 0;
+}
+.st-blue   { background: var(--sky); color: var(--blue); }
+.st-green  { background: var(--green-light); color: var(--green); }
+.st-amber  { background: var(--amber-light); color: var(--amber); }
+.st-purple { background: var(--purple-light); color: var(--purple); }
+.st-teal   { background: var(--teal-light); color: var(--teal); }
+.st-red    { background: var(--red-light); color: var(--red); }
+.st-gold   { background: #fef8e1; color: #a07c10; }
+.sum-body { font-size: 12.5px; color: var(--ink2); line-height: 1.75; margin-bottom: 12px; }
+.sum-formula {
+  padding: 16px 18px; border-radius: 10px;
+  background: #ffffff; border: 1px solid rgba(74,144,217,0.14);
+  font-family: var(--font-finance);
+  font-size: 12px; color: var(--ink); white-space: pre-line; line-height: 1.75; margin-bottom: 12px;
+}
+.sum-example {
+  padding: 10px 14px; border-radius: 0 10px 10px 0;
+  border-left: 3px solid var(--blue);
+  background: var(--sky); font-size: 12px;
+  color: var(--blue); line-height: 1.65; font-weight: 600;
+}
+
+body:not(.home-page) .taxes-section,
+body:not(.home-page) .summary-section {
+  background: transparent;
+}
+
+body:not(.home-page) .hiw-section {
+  background: linear-gradient(180deg, #e6f0fa 0%, #f6fbff 58%, #ffffff 100%);
+}
+
+body:not(.home-page) .section-h2,
+body:not(.home-page) .eyebrow,
+body:not(.home-page) .sum-name,
+body:not(.home-page) .tc-name {
+  color: var(--blue);
+}
+
+body:not(.home-page) .tax-card,
+body:not(.home-page) .sum-card {
+  background: rgba(255,255,255,0.86);
+  border-color: rgba(74,144,217,0.18);
+  box-shadow: 0 14px 34px rgba(37,99,168,0.08);
+  backdrop-filter: blur(8px);
+}
+
+body:not(.home-page) .tc-btn {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: var(--white);
+}
+
+body:not(.home-page) .tc-btn:hover {
+  background: var(--blue-mid);
+  border-color: var(--blue-mid);
+}
+
+body:not(.home-page) .sum-formula {
+  border-color: rgba(74,144,217,0.2);
+}
+
+body:not(.home-page) .sum-example,
+body:not(.home-page) .st-blue {
+  background: #e6f0fa;
+  color: var(--blue);
+}

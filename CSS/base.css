@@ -1,0 +1,95 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-en);
+  background: var(--white);
+  color: var(--ink);
+  min-width: 0;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+body:not(.home-page) {
+  background:
+    linear-gradient(180deg, #e6f0fa 0%, #f6fbff 46%, #ffffff 100%);
+  position: relative;
+}
+
+body:not(.home-page)::before,
+body:not(.home-page)::after {
+  content: "";
+  position: fixed;
+  left: -12vw;
+  right: -12vw;
+  bottom: -18vh;
+  height: 34vh;
+  pointer-events: none;
+  z-index: 0;
+}
+
+body:not(.home-page)::before {
+  background: rgba(74,144,217,0.14);
+  border-radius: 52% 48% 0 0 / 34% 44% 0 0;
+  transform: rotate(-1.5deg);
+}
+
+body:not(.home-page)::after {
+  bottom: -23vh;
+  background: rgba(37,99,168,0.1);
+  border-radius: 44% 56% 0 0 / 48% 36% 0 0;
+  transform: rotate(2deg);
+}
+
+body:not(.home-page) > * {
+  position: relative;
+  z-index: 1;
+}
+
+img, svg, video, canvas {
+  max-width: 100%;
+}
+
+img, video {
+  height: auto;
+}
+
+button, [role="button"], a, input, select {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ── REVEAL ── */
+.reveal { opacity: 0; transform: translateY(20px); transition: opacity .55s ease, transform .55s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+
+/* ── FOCUS & ACCESSIBILITY ── */
+button, a, input, select, textarea { 
+  transition: outline var(--transition-smooth), box-shadow var(--transition-smooth);
+}
+
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 3px solid rgba(201,162,39,0.78);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 5px rgba(201,162,39,0.18);
+}
+
+button:active, a:active {
+  transform: scale(0.98);
+}
+
+/* ── RESPONSIVE UTILITIES ── */
+@media (max-width: 768px) {
+  body { font-size: 15px; }
+}
+
+@media (max-width: 480px) {
+  body { font-size: 14px; }
+}
+
+/* ── SAFE AREA & NOTCH ── */
+@supports (padding: max(0px)) {
+  body { 
+    padding-left: max(0px, env(safe-area-inset-left)); 
+    padding-right: max(0px, env(safe-area-inset-right)); 
+  }
+}

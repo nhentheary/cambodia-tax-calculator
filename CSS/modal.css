@@ -1,0 +1,33 @@
+/* ── MODAL ── */
+.modal-overlay {
+  display: none; position: fixed; inset: 0; z-index: 200;
+  background: rgba(15,45,94,0.6); backdrop-filter: blur(4px);
+  align-items: center; justify-content: center;
+}
+.modal-overlay.open { display: flex; }
+.modal-box {
+  background: var(--white); border-radius: 22px; padding: 36px;
+  max-width: 520px; width: 90%; max-height: 82vh; overflow-y: auto;
+  box-shadow: 0 24px 80px rgba(15,45,94,0.3);
+  animation: modalPop .3s cubic-bezier(.34,1.56,.64,1);
+}
+@keyframes modalPop { from{opacity:0;transform:scale(.92)} to{opacity:1;transform:scale(1)} }
+.modal-close {
+  float: right; width: 32px; height: 32px; border-radius: 50%;
+  border: none; background: #f0f4f8; color: var(--ink2);
+  font-size: 15px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background .2s;
+}
+.modal-close:hover { background: var(--sky); }
+.modal-box h2 { font-size: 22px; font-weight: 900; color: var(--ink); margin-bottom: 8px; margin-top: 4px; }
+.modal-box p { font-size: 13px; color: var(--ink2); line-height: 1.8; margin-bottom: 16px; white-space: pre-line; }
+.modal-formula {
+  padding: 14px 16px; border-radius: 10px;
+  background: var(--ink); font-family: var(--font-finance);
+  font-size: 12px; color: #7fb3e0; white-space: pre-line; line-height: 1.8; margin-bottom: 14px;
+}
+.modal-example {
+  padding: 14px 16px; border-radius: 10px;
+  background: var(--sky); font-size: 13px; color: var(--blue);
+  line-height: 1.7; font-weight: 600;
+}
+
