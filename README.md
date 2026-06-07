@@ -25,7 +25,7 @@ project-root/
 │   ├── income-tax.html
 │   ├── patent-tax.html
 │   ├── property-tax.html
-│   ├── prepayment-tax.html
+│   ├── accommodation-tax.html
 │   └── transfer-tax.html
 ├── CSS/
 │   ├── variables.css       # Design tokens & color palette
@@ -44,7 +44,6 @@ project-root/
 │   └── history.js          # Calculation history
 ├── images/
 │   └── logo-3d.png
-├── vercel.json             # Vercel deployment config
 └── README.md
 ```
 ---
@@ -136,7 +135,8 @@ Then visit `http://localhost:3000`
 
 ## 📄 License
 
-This project was created for academic purposes at the **Institute of Technology of Cambodia (ITC)**.
+## 📄 License
+Academic project — Institute of Technology of Cambodia (ITC), 2026.
 
 ---
 
