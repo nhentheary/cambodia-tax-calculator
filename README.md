@@ -1,6 +1,6 @@
 # 🇰🇭 Cambodia Tax Calculator
 
-A responsive, multi-page web application for calculating various types of Cambodian taxes including Income Tax, Salary Tax, Value Added Tax (VAT), Property Tax, Withholding Tax, Specific Tax, Patent Tax, Transfer Tax, Accommodation Tax, Minimum Tax, and Tax on Profit.
+A responsive, multi-page web application for calculating various types of Cambodian taxes including Income Tax, Salary Tax, Value Added Tax (VAT), Property Tax, Withholding Tax, Specific Tax, Patent Tax, Transfer Tax, Accommodation Tax, Minimum Tax, and Prepayment Tax.
 
 Built with plain HTML, CSS, and JavaScript — no frameworks or build tools required.
 
