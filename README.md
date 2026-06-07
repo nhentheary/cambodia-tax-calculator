@@ -134,8 +134,6 @@ Then visit `http://localhost:3000`
 ---
 
 ## 📄 License
-
-## 📄 License
 Academic project — Institute of Technology of Cambodia (ITC), 2026.
 
 ---
